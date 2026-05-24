@@ -11,5 +11,5 @@ export default defineConfig({
     viteReact(),
     tailwindcss(),
   ],
-  base:"./", 
+  base: "/", 
 });
