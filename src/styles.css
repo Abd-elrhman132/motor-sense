@@ -1,0 +1,294 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-neon: var(--neon);
+  --color-cyan: var(--cyan);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: "Inter", "Cairo", system-ui, sans-serif;
+}
+
+:root,
+.dark {
+  --radius: 1rem;
+
+  /* Premium Monochrome Noir & Electric Cobalt Palette */
+  --background: oklch(0.03 0 0); /* Pure velvet black */
+  --foreground: oklch(0.99 0 0); /* Pure crisp white */
+
+  --card: oklch(0.08 0 0 / 0.65); /* Transparent dark graphite grey */
+  --card-foreground: oklch(0.99 0 0);
+
+  --popover: oklch(0.07 0 0);
+  --popover-foreground: oklch(0.99 0 0);
+
+  /* Primary: Electrifying Royal Cobalt Blue (Preserved) */
+  --primary: oklch(0.68 0.22 250);
+  --primary-foreground: oklch(0.99 0 0);
+
+  --secondary: oklch(0.12 0 0); /* Slate graphite */
+  --secondary-foreground: oklch(0.85 0 0); /* Steel grey */
+
+  --muted: oklch(0.10 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+
+  /* Accent: High-Contrast Crisp Steel Gray */
+  --accent: oklch(0.85 0 0);
+  --accent-foreground: oklch(0.08 0 0);
+
+  /* Danger: Pure Vibrant Alarm Red */
+  --destructive: oklch(0.62 0.21 28);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --success: oklch(0.78 0.16 145);
+  --warning: oklch(0.82 0.17 80);
+  --neon: oklch(0.68 0.22 250);
+  --cyan: oklch(0.68 0.22 250); /* Treat cyan highlights as cobalt blue */
+
+  --border: oklch(1 0 0 / 0.07); /* Translucent white border */
+  --input: oklch(1 0 0 / 0.03);
+  --ring: oklch(0.68 0.22 250 / 0.8);
+
+  --chart-1: oklch(0.68 0.22 250); /* Cobalt Blue */
+  --chart-2: oklch(0.85 0 0); /* Steel Gray */
+  --chart-3: oklch(0.82 0.17 80); /* Warning Gold */
+  --chart-4: oklch(0.62 0.21 28); /* Danger Red */
+  --chart-5: oklch(0.50 0 0); /* Dark Gray */
+
+  --sidebar: oklch(0.05 0 0 / 0.95);
+  --sidebar-foreground: oklch(0.85 0 0);
+  --sidebar-primary: oklch(0.68 0.22 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.10 0 0);
+  --sidebar-accent-foreground: oklch(0.99 0 0);
+  --sidebar-border: oklch(1 0 0 / 0.05);
+  --sidebar-ring: oklch(0.68 0.22 250);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+  body {
+    font-family: var(--font-sans);
+    /* High-end Cyber-Aurora Animated Background in Infinite Void */
+    background-image:
+      linear-gradient(135deg, oklch(0.12 0.04 250 / 0.35), transparent 45%),
+      radial-gradient(at 10% 0%, oklch(0.68 0.22 250 / 0.06) 0px, transparent 40%),
+      radial-gradient(at 90% 10%, oklch(0.85 0 0 / 0.03) 0px, transparent 35%),
+      radial-gradient(at 90% 90%, oklch(0.68 0.22 250 / 0.04) 0px, transparent 40%),
+      linear-gradient(180deg, oklch(0.02 0 0), oklch(0.04 0 0));
+    background-attachment: fixed;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: oklch(0.68 0.22 250 / 0.25);
+    color: oklch(0.99 0 0);
+  }
+  :focus-visible {
+    outline: 2px solid oklch(0.68 0.22 250 / 0.82);
+    outline-offset: 3px;
+  }
+  [dir="rtl"] body {
+    font-family: "Cairo", "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Double-Layered Cyber Glass */
+  .glass {
+    background:
+      linear-gradient(145deg, oklch(1 0 0 / 0.04), oklch(0.68 0.22 250 / 0.015)),
+      oklch(0.08 0 0 / 0.65);
+    backdrop-filter: blur(24px) saturate(1.15);
+    -webkit-backdrop-filter: blur(24px) saturate(1.15);
+    border: 1px solid oklch(1 0 0 / 0.07);
+    box-shadow:
+      0 24px 80px oklch(0 0 0 / 0.5),
+      inset 0 1px 0 oklch(1 0 0 / 0.06),
+      inset 0 0 0 1px oklch(0.68 0.22 250 / 0.015);
+    transition:
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .glass:hover {
+    border-color: oklch(0.68 0.22 250 / 0.2);
+    box-shadow:
+      0 30px 90px oklch(0 0 0 / 0.6),
+      inset 0 1px 0 oklch(1 0 0 / 0.08),
+      inset 0 0 0 1px oklch(0.68 0.22 250 / 0.04);
+  }
+
+  .glow-primary {
+    box-shadow:
+      0 12px 40px oklch(0.68 0.22 250 / 0.22),
+      inset 0 1px 0 oklch(1 0 0 / 0.15);
+  }
+  .glow-success {
+    box-shadow: 0 0 24px oklch(0.78 0.16 145 / 0.2);
+  }
+  .glow-error {
+    box-shadow: 0 0 24px oklch(0.62 0.21 28 / 0.25);
+  }
+  .text-glow-primary {
+    text-shadow: 0 0 20px oklch(0.68 0.22 250 / 0.3);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .animated-bg {
+    background: oklch(0.02 0 0);
+    position: relative;
+  }
+  .animated-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      -45deg,
+      oklch(0.02 0 0),
+      oklch(0.05 0.01 250),
+      oklch(0.03 0 0),
+      oklch(0.06 0.02 250)
+    );
+    background-size: 400% 400%;
+    animation: gradient-flow 24s ease infinite;
+    z-index: -1;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.68 0.22 250 / 0.15) transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: oklch(0.68 0.22 250 / 0.15);
+    border-radius: 999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.68 0.22 250 / 0.3);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.68 0.22 250 / 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 10px oklch(0.68 0.22 250 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.68 0.22 250 / 0);
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Biometric cyber scan lines */
+@keyframes scanning {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.scanning-line {
+  animation: scanning 4s linear infinite;
+}
+
+/* Custom dashboard styles */
+.hud-card {
+  position: relative;
+  overflow: hidden;
+}
+.hud-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid oklch(0.68 0.22 250 / 0.03);
+  pointer-events: none;
+  border-radius: inherit;
+}

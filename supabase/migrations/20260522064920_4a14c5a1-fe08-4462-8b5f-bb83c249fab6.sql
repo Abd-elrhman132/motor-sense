@@ -1,0 +1,1 @@
+revoke execute on function public.handle_new_user_motors() from public, anon, authenticated;
